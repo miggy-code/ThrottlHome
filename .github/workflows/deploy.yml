@@ -17,9 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./company-landing
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,28 +25,31 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'npm' # Add caching for faster installs
 
       - name: Install dependencies
+        # Run from the correct subdirectory
         run: npm install --legacy-peer-deps
+        working-directory: ./company-landing
 
       - name: Build
+        # Run from the correct subdirectory
         run: npm run build
+        working-directory: ./company-landing
 
-      # --- VERIFICATION STEP ---
-      # This will print the file structure to the GitHub logs.
-      # If index.html is missing here, we know the build failed silently.
       - name: Verify Build Output
         run: |
-          echo "Checking dist/public folder..."
-          ls -la dist/public
+          echo "Checking build output folder..."
+          ls -la company-landing/dist/public
           echo "---------------------------"
 
       - name: Create .nojekyll
-        run: touch dist/public/.nojekyll
+        run: touch company-landing/dist/public/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # Path from the root of the repository
           path: './company-landing/dist/public'
 
   deploy:
