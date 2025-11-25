@@ -35,13 +35,15 @@ jobs:
       - name: Build
         run: npm run build
 
-      # DEBUG: List files to confirm where index.html is
-      - name: Debug Build Output
+      # --- VERIFICATION STEP ---
+      # This will print the file structure to the GitHub logs.
+      # If index.html is missing here, we know the build failed silently.
+      - name: Verify Build Output
         run: |
-          echo "Listing dist folder:"
-          ls -R dist
+          echo "Checking dist/public folder..."
+          ls -la dist/public
+          echo "---------------------------"
 
-      # CRITICAL: Create .nojekyll to allow files starting with _
       - name: Create .nojekyll
         run: touch dist/public/.nojekyll
 
