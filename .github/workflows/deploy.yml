@@ -28,14 +28,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # Removed cache to ensure clean install every time
 
       - name: Install dependencies
-        # --legacy-peer-deps forces installation even if versions conflict
         run: npm install --legacy-peer-deps
 
       - name: Build
         run: npm run build
+
+      # DEBUG: List files to confirm where index.html is
+      - name: Debug Build Output
+        run: |
+          echo "Listing dist folder:"
+          ls -R dist
+
+      # CRITICAL: Create .nojekyll to allow files starting with _
+      - name: Create .nojekyll
+        run: touch dist/public/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
