@@ -24,29 +24,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 1. Setup PNPM (Critical for your project)
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
-      # 2. Setup Node
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
-          cache-dependency-path: './company-landing/pnpm-lock.yaml'
+          cache: 'npm'
+          cache-dependency-path: './company-landing/package-lock.json'
 
-      # 3. Install Dependencies (Respects your lockfile)
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        # Uses 'npm install' to be safer than 'ci' if lockfile is new
+        run: npm install
 
-      # 4. Build the site
       - name: Build
-        run: pnpm run build
+        run: npm run build
 
-      # 5. Upload only the build folder
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
