@@ -19,30 +19,37 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        # CRITICAL: This tells GitHub to run commands inside your subfolder
         working-directory: ./company-landing
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 1. Setup PNPM (Critical for your project)
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      # 2. Setup Node
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-          # CRITICAL: Point cache to the lockfile in the subfolder
-          cache-dependency-path: './company-landing/package-lock.json'
+          cache: 'pnpm'
+          cache-dependency-path: './company-landing/pnpm-lock.yaml'
 
+      # 3. Install Dependencies (Respects your lockfile)
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
+      # 4. Build the site
       - name: Build
-        run: npm run build
+        run: pnpm run build
 
+      # 5. Upload only the build folder
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # CRITICAL: Path must include the subfolder
           path: './company-landing/dist/public'
 
   deploy:
