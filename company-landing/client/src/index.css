@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  
+  /* 
+     Define the 'border' color namespace so '@apply border-border' works.
+     We map it to a standard slate color.
+  */
+  --color-border: var(--color-slate-200);
+}
+
+@layer base {
+  /* 
+     We manually define the variable for standard usage 
+     and apply the base styles you had.
+  */
+  :root {
+    --border: var(--color-slate-200);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    @apply bg-white text-slate-900;
+  }
+
+  /* This line caused the crash before because 'border-border' was undefined */
+  * {
+    @apply border-border;
+  }
+}

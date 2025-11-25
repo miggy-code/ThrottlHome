@@ -1,0 +1,22 @@
+# Project TODO
+
+- [x] Design landing page structure and choose design style
+- [x] Create hero section with compelling headline and CTA
+- [x] Add features/services section
+- [x] Add about/company section
+- [x] Create contact section with form
+- [x] Add footer with links and social media
+- [x] Implement responsive navigation header
+- [x] Style with modern design using Tailwind CSS
+- [x] Test responsiveness across devices
+- [x] Verify all links and interactions work
+- [x] Add glassmorphism effects and modern visual enhancements
+- [x] Implement smooth scroll animations and micro-interactions
+- [x] Enhance typography and spacing for tech aesthetic
+- [x] Add gradient accents and refined color palette
+- [x] Improve visual hierarchy and polish overall design
+- [x] Hide rocketship section on mobile view
+- [x] Add more attractive but simple animations throughout
+- [x] Enhance scroll-triggered animations for sections
+- [x] Add subtle hover animations to interactive elements
+- [x] Improve mobile responsiveness and polish
