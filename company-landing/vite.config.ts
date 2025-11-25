@@ -8,7 +8,7 @@ const plugins = [react(), tailwindcss()];
 export default defineConfig({
   plugins,
   // CRITICAL: "./" makes the site work on ANY url, preventing path-based 404s
-  base: "./", 
+  base: "/ThrottlHome/", 
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
