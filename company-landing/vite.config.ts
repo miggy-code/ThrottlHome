@@ -10,7 +10,7 @@ const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(
 
 export default defineConfig({
   plugins,
-  base: "/company-landing/", 
+  base: "/ThrottlHome/", 
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
