@@ -17,6 +17,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        # CRITICAL: This tells GitHub to run commands inside your subfolder
+        working-directory: ./company-landing
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,7 +30,8 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          cache-dependency-path: './package-lock.json'
+          # CRITICAL: Point cache to the lockfile in the subfolder
+          cache-dependency-path: './company-landing/package-lock.json'
 
       - name: Install dependencies
         run: npm ci
@@ -37,7 +42,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist/public'
+          # CRITICAL: Path must include the subfolder
+          path: './company-landing/dist/public'
 
   deploy:
     environment:
