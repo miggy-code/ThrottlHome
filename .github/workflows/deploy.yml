@@ -28,14 +28,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # Cache removed to prevent "path not resolved" errors
-
-      - name: Debug File Structure
-        run: ls -R
-        working-directory: .
+          # Removed cache to ensure clean install every time
 
       - name: Install dependencies
-        run: npm install
+        # --legacy-peer-deps forces installation even if versions conflict
+        run: npm install --legacy-peer-deps
 
       - name: Build
         run: npm run build
