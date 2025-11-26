@@ -1,15 +1,20 @@
-name: Deploy to GitHub Pages
+# .github/workflows/deploy.yml
+# (REPLACE YOUR ENTIRE FILE WITH THIS)
+
+name: Deploy Vite App to GitHub Pages
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+# Set permissions for the GITHUB_TOKEN for deployment
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment, canceling older runs
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -17,39 +22,45 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    # All 'run' commands in this job will execute inside the 'company-landing' folder
+    defaults:
+      run:
+        working-directory: ./company-landing
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm' # Add caching for faster installs
+          cache: 'npm'
+          # Use the correct path for the lock file for caching
+          cache-dependency-path: 'company-landing/package-lock.json'
 
       - name: Install dependencies
-        # Run from the correct subdirectory
         run: npm install --legacy-peer-deps
-        working-directory: ./company-landing
 
-      - name: Build
-        # Run from the correct subdirectory
+      - name: Build application
         run: npm run build
-        working-directory: ./company-landing
 
-      - name: Verify Build Output
-        run: |
-          echo "Checking build output folder..."
-          ls -la company-landing/dist/public
-          echo "---------------------------"
-
-      - name: Create .nojekyll
-        run: touch company-landing/dist/public/.nojekyll
+      # NEW STEP: Create a 404.html file from index.html
+      # This is crucial for single-page applications (SPA) with routing on GitHub Pages.
+      # It ensures that refreshing a page like /about doesn't result in a 404.
+      - name: Prepare for SPA routing
+        run: cp dist/public/index.html dist/public/404.html
+      
+      # This step is good for debugging, it will show the contents of the build folder
+      - name: Verify build output
+        run: ls -la dist/public
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Path from the root of the repository
+          # The path is relative to the REPOSITORY ROOT, not the working directory.
+          # This is the correct path for your structure.
           path: './company-landing/dist/public'
 
   deploy:

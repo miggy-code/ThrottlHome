@@ -14,7 +14,7 @@ export default defineConfig({
   // CRITICAL FIX: The 'base' must be the name of your repository, 
   // enclosed in slashes. This ensures assets are loaded from 
   // https://miggy-code.github.io/ThrottlHome/ and not the root domain.
-  base: "/ThrottlHome/",
+  //base: "/ThrottlHome/",
 
   resolve: {
     alias: {
