@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import {
   MessageSquare,
   BookOpen,
@@ -211,17 +211,9 @@ function ProgressSegment({
 
 function DetailPanel({ phase, isVisible }: { phase: Phase; isVisible: boolean }) {
   const Icon = phase.icon;
-  const panelRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (isVisible && panelRef.current) {
-      panelRef.current.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    }
-  }, [isVisible, phase.id]);
 
   return (
     <div
-      ref={panelRef}
       className={cn(
         "transition-all duration-500 ease-out",
         isVisible
