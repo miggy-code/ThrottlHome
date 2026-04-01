@@ -1,26 +1,193 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Primary Colors */
+  --color-canvas: #FAFBFC;
+  --color-ink: #1B2A4A;
+  --color-charcoal: #3D4F5F;
+
+  /* Accent & Functional */
+  --color-blueprint: #3B7DD8;
+  --color-blueprint-hover: #2D6BC4;
+  --color-gridline: #E2E6EB;
+  --color-wash: #F0F2F5;
+  --color-success: #2E8B57;
+  --color-error: #C0392B;
+
+  /* Fonts — mapped to next/font CSS variables */
+  --font-display: var(--font-playfair-display), Georgia, serif;
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-charcoal);
+    background-color: var(--color-canvas);
+    font-size: 18px;
+    line-height: 1.67;
+  }
+
+  h1, h2 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    font-weight: 700;
+  }
+
+  h1 {
+    font-size: 56px;
+    line-height: 64px;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+
+  ::selection {
+    background-color: var(--color-ink);
+    color: white;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  /* Responsive typography */
+  @media (max-width: 767px) {
+    h1 {
+      font-size: 36px;
+      line-height: 42px;
+    }
+
+    h2 {
+      font-size: 28px;
+      line-height: 34px;
+    }
+
+    h3 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    body {
+      font-size: 16px;
+      line-height: 1.625;
+    }
+  }
+}
+
+/* ── rehype-pretty-code overrides ── */
+
+[data-rehype-pretty-code-figure] pre {
+  margin: 2rem 0;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-gridline);
+  padding: 1.25rem;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-x: auto;
+  background-color: #0d1117 !important;
+}
+
+[data-rehype-pretty-code-figure] code {
+  font-family: var(--font-mono);
+  background: transparent !important;
+  padding: 0 !important;
+  font-size: inherit;
+  color: inherit;
+}
+
+[data-rehype-pretty-code-figure] [data-line] {
+  padding: 0 1rem;
+  border-left: 2px solid transparent;
+}
+
+[data-rehype-pretty-code-figure] [data-highlighted-line] {
+  background-color: rgba(59, 125, 216, 0.08);
+  border-left-color: var(--color-blueprint);
+}
+
+[data-rehype-pretty-code-figure] figcaption {
+  padding: 0.5rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  background-color: #161b22;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0.75rem 0.75rem 0 0;
+}
+
+[data-rehype-pretty-code-figure] figcaption + pre {
+  margin-top: 0;
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Inline code (within paragraphs, not in pre blocks) */
+:not(pre) > code[data-theme] {
+  border-radius: 4px;
+  background-color: var(--color-wash) !important;
+  padding: 2px 6px;
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  color: var(--color-ink);
+}
+
+/* ── Blog card entry animation ── */
+
+@keyframes blogCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero gradient mesh animations */
+@keyframes meshFloat1 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(30px, -20px); }
+  66% { transform: translate(-20px, 30px); }
+}
+
+@keyframes meshFloat2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-25px, 15px); }
+  66% { transform: translate(15px, -25px); }
+}
+
+@keyframes meshFloat3 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(20px, 25px); }
+  66% { transform: translate(-30px, -15px); }
 }
