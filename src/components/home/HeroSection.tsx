@@ -95,8 +95,8 @@ const CHAOS: ChaosItem[] = [
   { id: 24, type: "data", content: "99.2", x: 62, y: 44, rot: -3, opacity: 0.24, fontSize: 14, ring: "inner", bp: 1 },
   { id: 25, type: "data", content: "0.034", x: 44, y: 72, rot: 5, opacity: 0.18, fontSize: 12, ring: "inner", bp: 2 },
   { id: 26, type: "data", content: "+186%", x: 72, y: 58, rot: -6, opacity: 0.3, fontSize: 16, ring: "inner", bp: 1, residual: true },
-  { id: 27, type: "data", content: "NaN", x: 46, y: 18, rot: 4, opacity: 0.24, fontSize: 15, ring: "inner", bp: 0 },
-  { id: 28, type: "data", content: "$4,291,0—", x: 30, y: 74, rot: -7, opacity: 0.18, fontSize: 13, ring: "inner", bp: 2 },
+  { id: 27, type: "data", content: "0.247", x: 46, y: 18, rot: 4, opacity: 0.24, fontSize: 15, ring: "inner", bp: 0 },
+  { id: 28, type: "data", content: "$4,291,000", x: 30, y: 74, rot: -7, opacity: 0.18, fontSize: 13, ring: "inner", bp: 2 },
 
   // ── Decorative (outer) ──
   { id: 29, type: "line", x: 8, y: 38, width: 70, angle: 28, opacity: 0.07, ring: "outer", bp: 1 },
@@ -143,14 +143,29 @@ export function HeroSection() {
   // ── Init: filter by breakpoint, trigger via IntersectionObserver ────────────
 
   useEffect(() => {
+    // Safety check: if already played, skip to resolved
+    try {
+      const hasPlayed = sessionStorage.getItem("hero-played");
+      if (hasPlayed === "true" && process.env.NODE_ENV !== "development") {
+        requestAnimationFrame(() => setPhase("resolved"));
+        // Still need to set items for the static layout
+        const w = window.innerWidth;
+        const bp = w >= 1024 ? 2 : w >= 768 ? 1 : 0;
+        requestAnimationFrame(() => setItems(CHAOS.filter((el) => el.bp <= bp)));
+        return;
+      }
+    } catch {
+      // Storage might be blocked
+    }
+
     const w = window.innerWidth;
     const bp = w >= 1024 ? 2 : w >= 768 ? 1 : 0;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setItems(CHAOS.filter((el) => el.bp <= bp));
+    const filteredItems = CHAOS.filter((el) => el.bp <= bp);
+    requestAnimationFrame(() => setItems(filteredItems));
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) {
-      setPhase("resolved");
+      requestAnimationFrame(() => setPhase("resolved"));
       return;
     }
 
