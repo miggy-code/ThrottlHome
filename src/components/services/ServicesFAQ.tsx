@@ -13,7 +13,7 @@ const FAQ_ITEMS: FAQItem[] = [
   {
     question: "We already have AI tools. Why do we need training?",
     answer:
-      "Having tools and using them effectively are two different things. Industry data shows only 36% of AI license holders become active users. Training closes that gap — turning shelfware into daily drivers and unlocking the ROI you're already paying for.",
+      "Having tools and using them effectively are two different things. Industry data shows only 36% of AI license holders become active users. Training closes that gap by turning shelfware into daily drivers and unlocking the ROI you're already paying for.",
   },
   {
     question: "Is this generic AI training or specific to our business?",
@@ -28,22 +28,22 @@ const FAQ_ITEMS: FAQItem[] = [
   {
     question: "What if our employees are resistant to AI?",
     answer:
-      "Research consistently shows that resistance isn't the real barrier — poor preparation is. 57% of employees actively want AI skills training from their employer. We meet people where they are, starting with their actual pain points, not abstract capabilities.",
+      "Research consistently shows that resistance isn't the real barrier: poor preparation is. 57% of employees actively want AI skills training from their employer. We meet people where they are, starting with their actual pain points, not abstract capabilities.",
   },
   {
     question: "Do you work with specific industries?",
     answer:
-      "We work with operators across industries — finance, logistics, professional services, manufacturing, and more. The AI tools are the same; the workflows are different. That's why we customize every engagement around your operational context.",
+      "We work with operators across all industries, from finance to manufacturing. The AI tools are the same; the workflows are different. That's why we customize every engagement around your operational context.",
   },
   {
     question: "What's the difference between education and custom solutions?",
     answer:
-      "Education makes your existing team capable with existing tools. Custom solutions build new systems when training reveals opportunities that require engineering — a knowledge base, an automation pipeline, or an AI agent. Many clients start with training and move to solutions once they see what's possible.",
+      "Education makes your existing team capable with existing tools. Custom solutions build new systems when training reveals opportunities that require engineering, like a knowledge base or an automation pipeline. Many clients start with training and move to solutions once they see what's possible.",
   },
   {
     question: "How do we get started?",
     answer:
-      "Book a complimentary 60-minute strategy review. We'll assess where your organization stands, identify the highest-impact opportunities, and recommend a path forward — whether that's training, solutions, or both.",
+      "Book a complimentary 60-minute strategy review. We'll assess where your organization stands, identify the highest-impact opportunities, and recommend a path forward whether that's training or solutions.",
   },
 ];
 

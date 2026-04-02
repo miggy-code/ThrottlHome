@@ -31,7 +31,7 @@ const QUESTIONS: Question[] = [
       { label: "Documented but not searchable by AI", score: 1 },
       { label: "Centralized in a knowledge base that AI can query", score: 2 },
       { label: "Actively maintained as playbooks that AI agents follow", score: 3 },
-      { label: "Self-updating — AI captures and organizes new knowledge automatically", score: 4 },
+      { label: "Self-updating: AI captures and organizes new knowledge automatically", score: 4 },
     ],
   },
   {
@@ -49,9 +49,9 @@ const QUESTIONS: Question[] = [
     options: [
       { label: "We don't know where to start", score: 0 },
       { label: "We have tools but they're not connected to our actual data", score: 1 },
-      { label: "AI works in silos — it's not integrated into real operations", score: 2 },
-      { label: "Scaling what works to more of the organization", score: 3 },
-      { label: "Staying ahead — making our AI systems compound in value over time", score: 4 },
+      { label: "AI works in silos: it's not integrated into real operations", score: 2 },
+      { label: "AI is connected to operations, but we still trigger it manually", score: 3 },
+      { label: "Staying ahead: making our AI systems compound in value over time", score: 4 },
     ],
   },
 ];
@@ -84,7 +84,7 @@ const PHASE_RESULTS: PhaseResult[] = [
     subtitle: "The RAG Era",
     color: "text-blueprint",
     description:
-      "You've started connecting AI to your data, but it's early. The foundation is being laid — now it's about making that foundation reliable and expanding its reach.",
+      "You've started connecting AI to your data, but it's early. The foundation is being laid, now it's about making that foundation reliable and expanding its reach.",
     nextStep:
       "Build out your knowledge infrastructure and identify the first workflows where AI can move from answering questions to taking action.",
   },
@@ -303,7 +303,7 @@ export function ReadinessAssessment() {
                 {/* Phase badge */}
                 <div className="text-center">
                   <span className={cn("font-mono text-[13px] font-semibold uppercase tracking-wider", result.color)}>
-                    Phase {result.phase} — {result.subtitle}
+                    Phase {result.phase}: {result.subtitle}
                   </span>
                   <h3 className="mt-2 font-display text-[28px] font-bold text-ink md:text-[32px]">
                     {result.title}

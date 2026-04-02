@@ -17,8 +17,8 @@ export function AdoptionGapSection() {
         </FadeIn>
         <FadeIn delay={200}>
           <p className="mt-4 max-w-[600px] text-charcoal">
-            The organizations seeing real AI ROI aren&apos;t the ones with the
-            most tools — they&apos;re the ones whose people know how to use
+            The organizations seeing real AI ROI aren't the ones with the
+            most tools. They're the ones whose people know how to use
             them. The gap between purchase and productivity is where most AI
             investments die.
           </p>

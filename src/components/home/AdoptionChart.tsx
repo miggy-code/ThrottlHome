@@ -44,7 +44,7 @@ const PHASES: Phase[] = [
     colorBorder: "border-[#6B7280]/30",
     colorGlow: "shadow-[0_0_20px_rgba(107,114,128,0.15)]",
     description:
-      "Employees use BYOAI or a corporate chatbot. It's a one-pass system — ask a question, get a text answer. No internal data connection.",
+      "Employees use BYOAI or a corporate chatbot. It's a one-pass system: ask a question, get a text answer. No internal data connection.",
     infrastructure:
       "Standard API keys or browser-based logins. No internal data connection.",
     brain: 'Non-existent. Knowledge is trapped in PDFs on a hard drive or in the head of "the tech guy."',
@@ -83,7 +83,7 @@ const PHASES: Phase[] = [
       'AI stops just "talking" and starts "doing." You move from a chatbot to an Agent that reads emails, checks status, and updates your systems.',
     infrastructure:
       "Multi-agent loops (Perceive → Reason → Plan → Act → Observe). Tool-calling capabilities connected to Slack, GitHub, or CRM.",
-    brain: "No longer just a library — it's a Playbook. It stores how-to guides that agents follow to execute tasks.",
+    brain: "No longer just a library, it's a Playbook. It stores how-to guides that agents follow to execute tasks.",
     benefits:
       "Operational efficiency. You eliminate middle-man tasks like data entry, scheduling, and basic project management.",
     metric: "10x",
@@ -121,7 +121,7 @@ const PHASES: Phase[] = [
       'Recursive Feedback Loops. The system uses "Episodic Memory" to remember every past mistake and success across the entire firm.',
     brain: "A Collective Consciousness. It captures the silent knowledge of every meeting and decision. It models individual decision-making history.",
     benefits:
-      "Compounding intelligence. The company's value is its proprietary Digital Asset — a brain that gets smarter every day.",
+      "Compounding intelligence. The company's value is its proprietary Digital Asset: a brain that gets smarter every day.",
     metric: "∞",
   },
 ];
@@ -242,7 +242,7 @@ function DetailPanel({ phase, isVisible }: { phase: Phase; isVisible: boolean })
             </div>
             <div>
               <p className={cn("font-mono text-[12px] font-semibold uppercase tracking-wider", phase.color)}>
-                Phase {phase.id} — {phase.subtitle}
+                Phase {phase.id}: {phase.subtitle}
               </p>
               <h4 className="mt-1 font-display text-[24px] font-bold leading-tight text-ink md:text-[28px]">
                 {phase.title}

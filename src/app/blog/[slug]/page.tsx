@@ -27,7 +27,7 @@ export async function generateMetadata({
   if (!post) return {};
 
   return {
-    title: `${post.title} — Throttl`,
+    title: `${post.title} | Throttl`,
     description: post.description,
   };
 }

@@ -104,7 +104,7 @@ const stats = [
   {
     target: 57,
     suffix: "%",
-    label: "of workers actively want AI skills training — and look to their employer to provide it.",
+    label: "of workers actively want AI skills training and look to their employer to provide it.",
     source: "No Jitter",
     color: "bg-success/70",
   },
@@ -146,13 +146,13 @@ export function AdoptionGapStats() {
             </div>
             <div>
               <p className="font-sans text-[15px] font-semibold text-ink">
-                Your employees are already using AI — just not the way you want.
+                Your employees are already using AI, just not the way you want.
               </p>
               <p className="mt-1 font-sans text-[14px] leading-relaxed text-charcoal/70">
                 90% of companies have employees using personal AI tools for work, while only
                 40% have official subscriptions. That means uncontrolled data exposure,
                 inconsistent output, and zero institutional learning. Training doesn&apos;t
-                fight adoption — it channels the adoption that&apos;s already happening.
+                fight adoption. It channels the adoption that&apos;s already happening.
               </p>
               <p className="mt-2 font-mono text-[11px] text-charcoal/30">
                 Source: Menlo Ventures, State of GenAI in the Enterprise 2025

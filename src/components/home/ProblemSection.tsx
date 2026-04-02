@@ -63,22 +63,21 @@ function AnimatedStat({
 
 // ─── Section ─────────────────────────────────────────────────────────────────
 
-const stats = [
+const stats: { target: number; prefix?: string; suffix?: string; label: string }[] = [
   {
-    target: 73,
+    target: 77,
     suffix: "%",
-    label: "of AI projects never reach production.",
+    label: "of executives say their biggest AI hurdle is a lack of internal skills.",
   },
   {
-    target: 87,
+    target: 78,
     suffix: "%",
-    label: "of data science projects never make it to market.",
+    label: "of employees are bringing unapproved AI tools into the workplace.",
   },
   {
-    target: 300,
-    prefix: "$",
-    suffix: "B+",
-    label: "wasted annually on failed digital transformations.",
+    target: 70,
+    suffix: "%",
+    label: "of software implementations fail due to poor team adoption.",
   },
 ];
 
@@ -111,15 +110,15 @@ export function ProblemSection() {
             <FadeIn delay={200}>
               <div className="mt-6 space-y-4 text-charcoal">
                 <p>
-                  You&apos;re hearing about AI from every vendor, every
-                  conference, every board meeting. But the gap between what AI
-                  promises and what it delivers in your operation is vast.
+                  You&apos;re hearing about AI from every vendor, conference,
+                  and board member. But the gap between vendor promises and
+                  actual operational reality is massive.
                 </p>
                 <p>
-                  Most businesses don&apos;t need more AI tools — they need
-                  someone who understands their business well enough to know
-                  where AI actually creates value, and where it&apos;s just
-                  noise.
+                  The bottleneck isn&apos;t a lack of tools, it&apos;s a lack of
+                  internal fluency. You don&apos;t need another software
+                  subscription; you need your leadership team equipped to
+                  separate the hype from the actual ROI.
                 </p>
               </div>
             </FadeIn>

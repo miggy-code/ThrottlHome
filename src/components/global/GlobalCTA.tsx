@@ -11,8 +11,8 @@ export function GlobalCTA() {
           </h2>
           <p className="mt-6 font-sans text-lg text-white/75">
             Every engagement starts with a conversation. Book a complimentary
-            strategy review with Gabriel and get clarity on where AI can — and
-            can&apos;t — create value in your operation.
+            strategy review with Gabriel and get clarity on where AI can and
+            can't create value in your operation.
           </p>
           <Button href="/contact" variant="dark" size="lg" className="mt-10">
             Book Your Strategy Review

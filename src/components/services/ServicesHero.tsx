@@ -42,7 +42,7 @@ export function ServicesHero() {
           <div>
             <FadeIn>
               <span className="font-sans text-[14px] font-medium uppercase tracking-[0.08em] text-white/30">
-                Services
+                Education & Solutions
               </span>
             </FadeIn>
 
@@ -56,8 +56,8 @@ export function ServicesHero() {
             <FadeIn delay={200}>
               <p className="mt-6 max-w-[480px] font-sans text-lg leading-relaxed text-white/60">
                 Most AI investments fail not because the technology is wrong,
-                but because teams aren&apos;t equipped to use it. We close that
-                gap — with education that sticks and systems that ship.
+                but because teams aren't trained to use the technology. We close that 
+                gap with education that sticks and systems that ship.
               </p>
             </FadeIn>
 

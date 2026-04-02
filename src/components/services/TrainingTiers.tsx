@@ -23,21 +23,21 @@ const TIERS: Tier[] = [
     id: "exec",
     icon: Briefcase,
     title: "Executive Briefings",
-    tagline: "See the landscape clearly — then decide.",
+    tagline: "See the landscape clearly, then decide.",
     audience: "C-suite, VPs, and decision-makers",
     format: "Half-day session (on-site or virtual)",
     color: "text-blueprint",
     colorBg: "bg-blueprint/10",
     colorBorder: "border-blueprint/30",
     topics: [
-      "The real AI landscape — what matters, what's noise",
+      "The real AI landscape: what matters and what's noise",
       "Where AI creates value in your specific industry and operation",
       "Build vs. buy vs. wait decision frameworks",
       "Risk, compliance, and governance fundamentals",
       "Evaluating vendor claims without a technical background",
     ],
     outcome:
-      "Your leadership team walks away with a shared mental model of what AI can and can't do for your business — and a clear sense of where to invest next.",
+      "Your leadership team walks away with a shared mental model of what AI can and can't do for your business, plus a clear sense of where to invest next.",
   },
   {
     id: "team",
@@ -50,7 +50,7 @@ const TIERS: Tier[] = [
     colorBg: "bg-[#8500FF]/10",
     colorBorder: "border-[#8500FF]/30",
     topics: [
-      "Prompt engineering for real work — not party tricks",
+      "Prompt engineering for real work instead of party tricks",
       "Using ChatGPT, Claude, and Copilot for your actual daily tasks",
       "Building repeatable AI workflows within your existing tools",
       "Data privacy and security best practices for daily AI use",

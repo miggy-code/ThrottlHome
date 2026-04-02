@@ -18,9 +18,8 @@ export function TrainingSection() {
         <FadeIn delay={200}>
           <p className="mt-4 max-w-[640px] text-charcoal">
             We don&apos;t teach generic &ldquo;intro to AI&rdquo; courses. Every
-            session is built around the tools your company already pays for —
-            ChatGPT, Claude, Copilot, and whatever else is in your stack — applied
-            to the tasks your people actually do every day.
+            session is built around the tools your company already pays for, like
+            ChatGPT, Claude, and Copilot. Then we apply them to the tasks your people actually do every day.
           </p>
         </FadeIn>
 

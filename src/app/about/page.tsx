@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 const GlobalCTA = dynamic(() => import("@/components/global/GlobalCTA").then((m) => m.GlobalCTA));
 
 export const metadata: Metadata = {
-  title: "About — Throttl",
+  title: "About | Throttl",
   description:
     "Built by operators, for operators. Meet the team behind Throttl.",
 };

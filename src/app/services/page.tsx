@@ -11,9 +11,9 @@ const EngagementProcess = dynamic(() => import("@/components/services/Engagement
 const FAQSection = dynamic(() => import("@/components/services/FAQSection").then((m) => m.FAQSection));
 
 export const metadata: Metadata = {
-  title: "Services — Throttl",
+  title: "Services | Throttl",
   description:
-    "AI Education & Training and Custom AI Solutions — built around your business reality, your tools, and your team.",
+    "AI Education & Training and Custom AI Solutions, built around your business reality, your tools, and your team.",
 };
 
 export default function ServicesPage() {

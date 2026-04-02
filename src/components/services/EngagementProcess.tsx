@@ -13,30 +13,30 @@ const steps = [
   {
     icon: ClipboardCheck,
     number: "01",
-    title: "Audit",
+    title: "Audit (The Reality Check)",
     description:
-      "We learn your tools, workflows, team structure, and pain points. No recommendations until we understand the operation.",
+      "We don't do off-the-shelf curriculums. We analyze your current tools, your team's actual baseline, and your operational bottlenecks before we design your syllabus.",
   },
   {
     icon: SlidersHorizontal,
     number: "02",
-    title: "Customize",
+    title: "Customize (The Playbook)",
     description:
-      "Every session, curriculum, or system is designed around your specific context — your industry, your tools, your people.",
+      "We build a multi-day executive training experience strictly around your industry and your specific data. You learn on your own use-cases, not generic examples.",
   },
   {
     icon: Rocket,
     number: "03",
-    title: "Deliver",
+    title: "Equip (The Workshop)",
     description:
-      "Hands-on execution. Whether it's a workshop or a production system, we build alongside your team so knowledge transfers in real time.",
+      "Intensive, hands-on sessions for your C-suite and managers. We demystify the tech and install best practices so your leadership can confidently direct AI adoption.",
   },
   {
     icon: BarChart3,
     number: "04",
-    title: "Measure",
+    title: "Execute (The Handoff)",
     description:
-      "We define success metrics upfront and track them. If it's not creating measurable value, we adjust until it does.",
+      "Your team leaves with a concrete, de-risked roadmap and the internal fluency to execute it. If you need us to help build the complex workflows later, we’re here.",
   },
 ];
 
@@ -51,7 +51,7 @@ export function EngagementProcess() {
         </FadeIn>
         <FadeIn delay={100}>
           <h2 className="mt-6 font-display text-ink">
-            Audit. Customize. Deliver. Measure.
+            Audit. Customize. Equip. Execute.
           </h2>
         </FadeIn>
 

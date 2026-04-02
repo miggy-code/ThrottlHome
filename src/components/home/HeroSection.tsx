@@ -25,10 +25,9 @@ const T = {
 };
 
 const HEADLINE_WORDS = [
-  { text: "AI", line: 0 },
-  { text: "Clarity.", line: 0 },
-  { text: "Operational", line: 1 },
-  { text: "Results", line: 1 },
+  { text: "AI Clarity.", line: 0 },
+  { text: "Executive", line: 1 },
+  { text: "Confidence.", line: 1 },
 ];
 
 const DOT_OFFSETS: [number, number][] = [
@@ -87,7 +86,7 @@ const CHAOS: ChaosItem[] = [
   { id: 3, type: "text", content: "automate", x: 74, y: 24, rot: 7, opacity: 0.32, fontSize: 16, ring: "mid", bp: 0, seed: 0 },
   { id: 7, type: "text", content: "strategy", x: 16, y: 46, rot: -9, opacity: 0.28, fontSize: 19, ring: "mid", bp: 0, seed: 1 },
   { id: 8, type: "text", content: "workflow", x: 64, y: 62, rot: 11, opacity: 0.26, fontSize: 16, ring: "mid", bp: 0, seed: 2 },
-  { id: 20, type: "text", content: "optimize", x: 80, y: 54, rot: -8, opacity: 0.3, fontSize: 17, ring: "mid", bp: 0, seed: 3 },
+  { id: 20, type: "text", content: "optimize", x: 80, y: 54, rot: -8, opacity: 0.3, fontSize: 17, ring: "mid", bp: 0 },
 
   // ── Inner ring data fragments ──
   { id: 21, type: "data", content: "847.3", x: 58, y: 32, rot: 3, opacity: 0.28, fontSize: 15, ring: "inner", bp: 0 },
@@ -557,8 +556,9 @@ export function HeroSection() {
           className="mt-6 max-w-[600px] font-sans text-lg md:text-xl"
           style={{ opacity: resolved ? 1 : 0, color: "#B0B8C8" }}
         >
-          We help business leaders cut through AI complexity and build systems
-          that deliver measurable, consistent value.
+          Stop outsourcing your AI strategy to software vendors. We give your
+          leadership team the fluency, frameworks, and confidence to drive AI
+          adoption from the inside out.
         </p>
 
         <div
@@ -575,8 +575,8 @@ export function HeroSection() {
               boxShadow: "0 0 20px rgba(133,0,255,0.3)",
             }}
           >
-            <span className="hidden sm:inline">Book Your Complimentary Strategy Review</span>
-            <span className="sm:hidden">Book a Strategy Review</span>
+            <span className="hidden sm:inline">Book an Alignment Call</span>
+            <span className="sm:hidden">Book an Alignment Call</span>
           </a>
           <a
             href="#process"

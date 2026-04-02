@@ -25,7 +25,7 @@ const solutions: Solution[] = [
     description:
       "We audit your operations, identify the highest-value AI opportunities, and design an implementation roadmap with clear priorities and realistic timelines.",
     example:
-      "For a mid-market logistics firm, we mapped 14 automation opportunities across operations and prioritized the 3 that would recoup investment within 90 days — saving the client from a six-figure platform purchase they didn't need.",
+      "For a mid-market logistics firm, we mapped 14 automation opportunities across operations and prioritized the 3 that would recoup investment within 90 days, saving the client from a six-figure platform purchase they didn't need.",
     exampleLabel: "Logistics firm, 200 employees",
     color: "text-blueprint",
     colorBg: "bg-blueprint/10",
@@ -35,9 +35,9 @@ const solutions: Solution[] = [
     icon: Wrench,
     title: "System Design & Build",
     description:
-      "From knowledge bases and RAG pipelines to AI agents and automation workflows — we build production-grade systems that integrate into how your team actually works.",
+      "From knowledge bases and RAG pipelines to AI agents and automation workflows, we build production-grade systems that integrate into how your team actually works.",
     example:
-      "We built an AI-powered investment analysis system that reads deal memos, pulls comparable data, and generates preliminary assessments — replacing a process that took analysts 8+ hours per deal with one that takes 20 minutes.",
+      "We built an AI-powered investment analysis system that reads deal memos, pulls comparable data, and generates preliminary assessments, replacing a process that took analysts 8+ hours per deal with one that takes 20 minutes.",
     exampleLabel: "Investment firm, Series B",
     color: "text-[#8500FF]",
     colorBg: "bg-[#8500FF]/10",
@@ -47,9 +47,9 @@ const solutions: Solution[] = [
     icon: Plug,
     title: "Integration & Automation",
     description:
-      "Connect AI to your existing stack — CRM, project management, communication tools, databases. Eliminate the manual glue work between systems.",
+      "Connect AI to your existing stack (like your CRM, project management, and databases). Eliminate the manual glue work between systems.",
     example:
-      "We connected an AI layer between a client's CRM, email platform, and analytics dashboard — automating lead scoring, personalized outreach, and performance reporting that previously required a full-time coordinator.",
+      "We connected an AI layer between a client's CRM, email platform, and analytics dashboard, automating lead scoring, personalized outreach, and performance reporting that previously required a full-time coordinator.",
     exampleLabel: "B2B SaaS, marketing team",
     color: "text-success",
     colorBg: "bg-success/10",
@@ -211,8 +211,8 @@ export function CustomSolutionsSection() {
         <FadeIn delay={200}>
           <p className="mt-4 max-w-[640px] text-charcoal">
             Some opportunities require more than better prompting. When your
-            team identifies a workflow that needs a custom system — a knowledge
-            base, an automation pipeline, an AI agent — we build it.
+            team identifies a workflow that needs a custom system, like a knowledge
+            base or an AI agent, we build it.
           </p>
         </FadeIn>
 

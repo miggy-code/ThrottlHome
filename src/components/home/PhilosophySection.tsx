@@ -23,10 +23,9 @@ export function PhilosophySection() {
             <div className="mt-8 space-y-4 text-charcoal">
               <FadeIn delay={200}>
                 <p>
-                  Throttl approaches every engagement from the perspective of
-                  business outcomes, not technology for its own sake. We call it
-                  the Operator&apos;s Lens — the discipline of starting with your
-                  operation, your margins, your team, and working backward to find
+                  Throttl approaches every engagement through what we call
+                  the Operator&apos;s Lens: the discipline of starting with your
+                  business reality, not our technology stack, and working backward to find
                   where AI genuinely moves the needle.
                 </p>
               </FadeIn>
@@ -49,7 +48,7 @@ export function PhilosophySection() {
                   where not to use AI.&rdquo;
                 </p>
                 <cite className="mt-4 block font-sans text-sm not-italic text-charcoal">
-                  — Gabriel, Co-Founder
+                  - Gabriel, Co-Founder
                 </cite>
               </blockquote>
             </FadeIn>
@@ -61,9 +60,9 @@ export function PhilosophySection() {
               {/* Main image */}
               <div className="relative overflow-hidden rounded-xl shadow-[0_20px_60px_rgba(27,42,74,0.12)]">
                 <Image
-                  src="/business-meeting-over-coffee.jpg"
-                  alt="Strategic planning session — mapping business outcomes before choosing technology"
-                  width={640}
+                  src="/meeting.jpg"
+                  alt="Strategic planning session: mapping business outcomes before choosing technology"
+                  width={600}
                   height={440}
                   className="h-auto w-full object-cover"
                 />

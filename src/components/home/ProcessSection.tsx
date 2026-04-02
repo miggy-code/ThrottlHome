@@ -10,24 +10,24 @@ import { cn } from "@/lib/cn";
 const steps = [
   {
     number: "1",
-    title: "AI Peer Review",
+    title: "Pre-Workshop Alignment",
     description:
-      "A focused conversation with Gabriel to assess your current AI landscape, identify high-value opportunities, and cut through vendor noise. Complimentary.",
-    duration: "60 minutes",
+      "Before we step into the room, we audit your current workflows and identify the 'shadow AI' your team is already using. We don't do off-the-shelf lectures; we build the curriculum around your actual business data.",
+    duration: "Strategy & Audit",
   },
   {
     number: "2",
-    title: "Roadmap Workshop",
+    title: "The Executive Intensive",
     description:
-      "A structured session to design your AI implementation strategy, with clear priorities, realistic timelines, and defined success metrics.",
-    duration: "Half-day",
+      "A multi-day, highly interactive workshop for your leadership team. We strip away the jargon, bridging the gap between technical reality and operational strategy, so your managers know exactly where AI drives ROI.",
+    duration: "2-3 Days",
   },
   {
     number: "3",
-    title: "Implementation & Training",
+    title: "The Internal Playbook",
     description:
-      "Hands-on building and integration of AI systems into your operations, with parallel training so your team owns the capability long-term.",
-    duration: "Weeks to months",
+      "Your team doesn't just leave with theory. We exit the workshop with a concrete, de-risked AI policy and an execution roadmap that your own management can immediately deploy and oversee.",
+    duration: "The Handoff",
   },
 ];
 

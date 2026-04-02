@@ -6,26 +6,26 @@ import Link from "next/link";
 
 const services = [
   {
-    title: "AI Strategy & Implementation",
-    subtitle: "For leaders with a problem to solve.",
+    title: "Executive AI Workshops & Training",
+    subtitle: "Flagship",
     description:
-      "From a complimentary 60-minute strategy review through roadmap design to full hands-on implementation, we build AI systems that integrate into your operation and deliver measurable ROI.",
-    cta: { label: "Explore consulting", href: "/services" },
-    icon: Cpu,
-    accent: "border-t-blueprint",
-    iconBg: "bg-blueprint/10",
-    iconColor: "text-blueprint",
-  },
-  {
-    title: "Executive Education & Training",
-    subtitle: "For leaders who want their team to learn.",
-    description:
-      "Practical, operator-focused workshops and executive briefings that give your leadership team the AI fluency to make informed decisions — no academic theory, only applied knowledge.",
+      "Highly tailored, multi-day intensives for $5M+ businesses. We bridge the gap between AI hype and operational reality, giving your managers the fluency and frameworks to safely implement AI without relying on outside tech teams.",
     cta: { label: "Explore education", href: "/services" },
     icon: GraduationCap,
     accent: "border-t-[#8500FF]",
     iconBg: "bg-[#8500FF]/10",
     iconColor: "text-[#8500FF]",
+  },
+  {
+    title: "Custom AI Implementation",
+    subtitle: "Specialized",
+    description:
+      "Sometimes the roadmap your team designs during the workshop requires advanced engineering. For select clients, we act as a fractional development team, building the bespoke LLM and automation workflows you need, while your managers oversee the strategy.",
+    cta: { label: "Explore consulting", href: "/services" },
+    icon: Cpu,
+    accent: "border-t-blueprint",
+    iconBg: "bg-blueprint/10",
+    iconColor: "text-blueprint",
   },
 ];
 

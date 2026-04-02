@@ -6,7 +6,7 @@ import { BlogGallery } from "@/components/blog/BlogGallery";
 import { getAllPosts, getAllTags, getAllThemes } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Insights — Throttl",
+  title: "Insights | Throttl",
   description:
     "Thought leadership on AI strategy, implementation, and operations.",
 };
@@ -28,8 +28,8 @@ export default function BlogPage() {
               Ideas that move<br className="hidden md:block" /> the needle.
             </h1>
             <p className="mt-5 max-w-[600px] font-sans text-lg text-charcoal/75">
-              Practical thinking on AI strategy, engineering, and operations —
-              from the people who build it.
+              Practical thinking on AI strategy, engineering, and operations.
+              No fluff, just what works.
             </p>
           </FadeIn>
 
