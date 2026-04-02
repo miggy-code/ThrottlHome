@@ -399,7 +399,7 @@ export function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative h-screen w-full overflow-hidden bg-[#0a0f1a]"
+      className="relative h-[100svh] min-h-[600px] w-full pt-[72px] overflow-hidden bg-[#0a0f1a]"
     >
       {/* ── Gradient mesh ── */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
