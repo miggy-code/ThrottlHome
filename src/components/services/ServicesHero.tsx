@@ -83,6 +83,7 @@ export function ServicesHero() {
                 width={640}
                 height={440}
                 className="h-auto w-full object-cover"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
             </div>

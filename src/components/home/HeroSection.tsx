@@ -149,6 +149,12 @@ export function HeroSection() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setItems(CHAOS.filter((el) => el.bp <= bp));
 
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      setPhase("resolved");
+      return;
+    }
+
     const t = setTimeout(() => setPhase("chaos"), 100);
     return () => clearTimeout(t);
   }, []);
