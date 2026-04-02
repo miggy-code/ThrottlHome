@@ -69,16 +69,18 @@ export function ProofSection() {
         <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
           {projects.map((project, i) => (
             <FadeIn key={project.type} delay={200 + i * 100}>
-              <div className="rounded-lg border border-gridline bg-canvas p-10">
+              <div className="group relative overflow-hidden rounded-lg border border-gridline bg-canvas p-10 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(59,125,216,0.08)] hover:-translate-y-1 hover:border-blueprint/30">
                 <span className="font-sans text-xs font-medium uppercase tracking-[0.08em] text-blueprint">
                   {project.type}
                 </span>
                 <p className="mt-4 text-base text-charcoal">
                   {project.description}
                 </p>
-                <p className="mt-6 font-display text-[32px] font-bold leading-tight text-ink">
+                <p className="mt-6 font-display text-[32px] font-bold leading-tight text-ink transition-colors group-hover:text-blueprint">
                   {project.metric}
                 </p>
+                {/* Accent underline on hover */}
+                <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-blueprint transition-all duration-500 group-hover:w-full" />
               </div>
             </FadeIn>
           ))}
@@ -86,24 +88,12 @@ export function ProofSection() {
 
         {/* Founder spotlight */}
         <FadeIn delay={500}>
-          <div className="mt-20 grid grid-cols-1 items-center gap-10 md:grid-cols-[320px_1fr]">
-            {/* Image — tech meeting flatlay */}
-            <div className="relative mx-auto overflow-hidden rounded-xl md:mx-0">
-              <Image
-                src="/tech-meeting-flatlay.jpg"
-                alt="Throttl team working through AI strategy and implementation"
-                width={320}
-                height={320}
-                className="h-[300px] w-[320px] object-cover"
-              />
-              {/* Subtle overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent" />
-              {/* Corner accent */}
-              <div className="absolute bottom-3 left-3 rounded-[4px] bg-white/90 px-3 py-1.5 backdrop-blur-sm">
-                <p className="font-mono text-[11px] font-semibold text-blueprint">
-                  Hands-on advisory
-                </p>
-              </div>
+          <div className="mt-20 grid grid-cols-1 items-center gap-10 md:grid-cols-[280px_1fr]">
+            {/* Headshot placeholder */}
+            <div className="mx-auto h-[280px] w-[280px] rounded-[4px] border border-gridline bg-wash flex items-center justify-center md:mx-0">
+              <span className="font-sans text-sm text-charcoal/40">
+                Photo
+              </span>
             </div>
 
             {/* Bio */}

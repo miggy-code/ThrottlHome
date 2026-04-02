@@ -1,17 +1,97 @@
+"use client";
+
+import { useEffect, useRef, useState, useCallback } from "react";
 import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+
+// ─── Animated Counter ────────────────────────────────────────────────────────
+
+function AnimatedStat({
+  target,
+  prefix,
+  suffix,
+  label,
+  started,
+}: {
+  target: number;
+  prefix?: string;
+  suffix?: string;
+  label: string;
+  started: boolean;
+}) {
+  const [value, setValue] = useState(0);
+  const rafRef = useRef<number>(0);
+
+  const animate = useCallback(() => {
+    const duration = 1800;
+    const start = performance.now();
+
+    const tick = (now: number) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease-out expo
+      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      setValue(Math.round(eased * target));
+
+      if (progress < 1) {
+        rafRef.current = requestAnimationFrame(tick);
+      }
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+  }, [target]);
+
+  useEffect(() => {
+    if (!started) return;
+    animate();
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [started, animate]);
+
+  return (
+    <div>
+      <p className="font-display text-5xl font-bold text-ink tabular-nums">
+        {prefix}
+        {started ? value : 0}
+        {suffix}
+      </p>
+      <p className="mt-2 font-sans text-sm text-charcoal">{label}</p>
+    </div>
+  );
+}
+
+// ─── Section ─────────────────────────────────────────────────────────────────
 
 const stats = [
-  { number: "73%", label: "of AI projects never reach production." },
-  { number: "87%", label: "of data science projects never make it to market." },
   {
-    number: "$300B+",
+    target: 73,
+    suffix: "%",
+    label: "of AI projects never reach production.",
+  },
+  {
+    target: 87,
+    suffix: "%",
+    label: "of data science projects never make it to market.",
+  },
+  {
+    target: 300,
+    prefix: "$",
+    suffix: "B+",
     label: "wasted annually on failed digital transformations.",
   },
 ];
 
 export function ProblemSection() {
+  const { ref, isIntersecting } = useIntersectionObserver({
+    threshold: 0.3,
+  });
+  const [hasStarted, setHasStarted] = useState(false);
+
+  useEffect(() => {
+    if (isIntersecting && !hasStarted) setHasStarted(true);
+  }, [isIntersecting, hasStarted]);
+
   return (
     <section className="bg-wash py-16 md:py-[120px]">
       <Container>
@@ -45,24 +125,24 @@ export function ProblemSection() {
             </FadeIn>
           </div>
 
-          {/* Right column — stats */}
-          <FadeIn delay={300}>
-            <div className="flex flex-col justify-center gap-0">
-              {stats.map((stat, i) => (
+          {/* Right column — animated stats */}
+          <div ref={ref} className="flex flex-col justify-center gap-0">
+            {stats.map((stat, i) => (
+              <FadeIn key={stat.label} delay={300 + i * 120}>
                 <div
-                  key={stat.number}
                   className={`py-8 ${i < stats.length - 1 ? "border-b border-gridline" : ""}`}
                 >
-                  <p className="font-display text-5xl font-bold text-ink">
-                    {stat.number}
-                  </p>
-                  <p className="mt-2 font-sans text-sm text-charcoal">
-                    {stat.label}
-                  </p>
+                  <AnimatedStat
+                    target={stat.target}
+                    prefix={stat.prefix}
+                    suffix={stat.suffix}
+                    label={stat.label}
+                    started={hasStarted}
+                  />
                 </div>
-              ))}
-            </div>
-          </FadeIn>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

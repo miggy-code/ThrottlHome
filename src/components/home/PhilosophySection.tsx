@@ -71,16 +71,6 @@ export function PhilosophySection() {
                 <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/20 to-transparent" />
               </div>
 
-              {/* Blueprint accent — floating card */}
-              <div className="absolute -bottom-6 -left-4 z-10 rounded-lg border border-gridline bg-white px-5 py-4 shadow-lg md:-left-8">
-                <p className="font-mono text-[13px] font-medium text-blueprint">
-                  Operator&apos;s Lens
-                </p>
-                <p className="mt-0.5 font-sans text-[12px] text-charcoal/60">
-                  Outcomes first, technology second
-                </p>
-              </div>
-
               {/* Decorative corner accent */}
               <div className="absolute -right-3 -top-3 h-16 w-16 rounded-br-xl border-b-2 border-r-2 border-blueprint/20" />
             </div>
