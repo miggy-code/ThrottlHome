@@ -31,7 +31,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="bg-wash py-16 md:py-[120px]">
+    <section className="bg-wash py-12 md:py-[120px]">
       <Container>
         <FadeIn>
           <SectionLabel>HOW WE ENGAGE</SectionLabel>

@@ -16,7 +16,7 @@ export function ManifestoSection() {
   const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.15 });
 
   return (
-    <section className="relative overflow-hidden bg-ink py-20 md:py-[100px]">
+    <section className="relative overflow-hidden bg-ink py-16 md:py-[100px]">
       {/* Gradient mesh */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div

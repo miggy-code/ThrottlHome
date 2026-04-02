@@ -520,7 +520,7 @@ export function HeroSection() {
       {/* ── Content ── */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
 
-        <h1 className="font-display font-bold leading-[1.1] text-white text-[40px] md:text-[52px] lg:text-[72px]">
+        <h1 className="font-display font-bold leading-[1.1] text-white text-4xl sm:text-[40px] md:text-[52px] lg:text-[72px] hyphens-auto break-words">
           {HEADLINE_WORDS.map((word, i) => (
             <span key={i}>
               {i > 0 && HEADLINE_WORDS[i - 1].line === word.line && " "}

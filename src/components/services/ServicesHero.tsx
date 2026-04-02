@@ -47,7 +47,7 @@ export function ServicesHero() {
             </FadeIn>
 
             <FadeIn delay={100}>
-              <h1 className="mt-6 font-display text-[36px] font-bold leading-[1.12] text-white md:text-[56px]">
+              <h1 className="mt-6 font-display text-4xl font-bold leading-[1.12] text-white sm:text-[40px] md:text-[56px] hyphens-auto break-words">
                 You already bought the tools.{" "}
                 <span className="text-[#8500FF]">We make them pay off.</span>
               </h1>

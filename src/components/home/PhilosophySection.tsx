@@ -5,9 +5,9 @@ import { FadeIn } from "@/components/ui/FadeIn";
 
 export function PhilosophySection() {
   return (
-    <section className="bg-canvas py-16 md:py-[120px]">
+    <section className="bg-canvas py-12 md:py-[120px]">
       <Container>
-        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
+        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-16">
           {/* ── Text column ── */}
           <div>
             <FadeIn>

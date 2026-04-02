@@ -37,7 +37,7 @@ export function ProcessSection() {
   });
 
   return (
-    <section id="process" className="relative bg-canvas py-16 md:py-[120px]">
+    <section id="process" className="relative bg-canvas py-12 md:py-[120px]">
       <BlueprintGrid opacity={0.15} />
 
       <Container className="relative z-10">
