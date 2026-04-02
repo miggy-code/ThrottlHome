@@ -1,31 +1,37 @@
 import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { Cpu, GraduationCap } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const services = [
   {
-    title: "Executive AI Education",
-    subtitle: "Flagship",
+    title: "AI Management Training",
     description:
-      "Highly tailored, multi-day intensives that bridge the gap between AI hype and operational reality. We give your managers the fluency and frameworks to safely implement AI without relying on outside tech teams.",
+      "We run intensive, hands-on programs that give your managers the skills and confidence to use AI tools effectively — and drive real value from them across your organisation.",
+    bullets: [
+      "Practical AI tool workshops for management teams",
+      "Frameworks for identifying AI opportunities in your ops",
+      "Ongoing coaching to embed new habits",
+      "No jargon — just results",
+    ],
     cta: { label: "Explore education programs", href: "/services" },
-    icon: GraduationCap,
+    image: "/media/ai-training.webp",
     accent: "border-t-[#8500FF]",
-    iconBg: "bg-[#8500FF]/10",
-    iconColor: "text-[#8500FF]",
   },
   {
-    title: "Custom AI Solutions",
-    subtitle: "Specialized",
+    title: "In-House AI Enablement",
     description:
-      "Sometimes the roadmap your team designs during the workshop requires advanced engineering. For select clients, we act as a fractional development team, building the bespoke LLM and automation workflows you need, while your managers oversee the strategy.",
+      "Our teams embed directly into your business, working shoulder-to-shoulder with your management to identify, build, and roll out AI solutions that your employees actually use.",
+    bullets: [
+      "Dedicated Throttl team embedded in your organisation",
+      "End-to-end AI implementation alongside your people",
+      "Upskilling employees as we build",
+      "You own the outcomes — not a vendor dependency",
+    ],
     cta: { label: "Explore solutions", href: "/services" },
-    icon: Cpu,
+    image: "/media/ai-implementation.jpg",
     accent: "border-t-blueprint",
-    iconBg: "bg-blueprint/10",
-    iconColor: "text-blueprint",
   },
 ];
 
@@ -52,36 +58,46 @@ export function ServicesSection() {
 
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
           {services.map((service, i) => {
-            const Icon = service.icon;
             return (
               <FadeIn key={service.title} delay={300 + i * 100} className="flex h-full">
                 <div
-                  className={`group flex h-full w-full flex-col rounded-lg border border-gridline border-t-[3px] ${service.accent} bg-canvas p-10 transition-all duration-200 hover:shadow-[0_8px_32px_rgba(27,42,74,0.08)] hover:-translate-y-0.5 md:p-12`}
+                  className={`group flex h-full w-full flex-col overflow-hidden rounded-lg border border-gridline border-t-[3px] ${service.accent} bg-canvas transition-all duration-200 hover:shadow-[0_8px_32px_rgba(27,42,74,0.08)] hover:-translate-y-0.5`}
                 >
-                  <div
-                    className={`inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-lg ${service.iconBg}`}
-                  >
-                    <Icon
-                      className={`h-6 w-6 ${service.iconColor}`}
-                      strokeWidth={1.6}
+                  <div className="relative aspect-video w-full overflow-hidden border-b border-gridline/50">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   </div>
-                  <h3 className="mt-5 shrink-0 font-sans text-[22px] font-semibold text-ink">
-                    {service.title}
-                  </h3>
-                  <p className="mt-1 shrink-0 font-sans text-base italic text-charcoal">
-                    {service.subtitle}
-                  </p>
-                  <p className="mt-4 grow text-charcoal">{service.description}</p>
-                  <Link
-                    href={service.cta.href}
-                    className="group/link mt-6 mr-auto inline-flex shrink-0 items-center gap-1 font-sans text-base font-medium text-blueprint transition-colors hover:text-blueprint-hover"
-                  >
-                    {service.cta.label}{" "}
-                    <span className="inline-block transition-transform duration-200 group-hover/link:translate-x-1">
-                      &rarr;
-                    </span>
-                  </Link>
+                  
+                  <div className="flex flex-col grow p-8 md:p-10">
+                    <h3 className="shrink-0 font-sans text-[22px] font-semibold text-ink">
+                      {service.title}
+                    </h3>
+                    
+                    <p className="mt-3 shrink-0 text-charcoal">{service.description}</p>
+                    
+                    <ul className="mt-6 flex grow flex-col gap-3">
+                      {service.bullets.map((bullet) => (
+                        <li key={bullet} className="flex gap-3 text-charcoal">
+                          <span className="shrink-0 text-[#8500FF]">•</span>
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link
+                      href={service.cta.href}
+                      className="group/link mt-8 mr-auto inline-flex shrink-0 items-center gap-1 font-sans text-base font-medium text-blueprint transition-colors hover:text-blueprint-hover"
+                    >
+                      {service.cta.label}{" "}
+                      <span className="inline-block transition-transform duration-200 group-hover/link:translate-x-1">
+                        &rarr;
+                      </span>
+                    </Link>
+                  </div>
                 </div>
               </FadeIn>
             );
