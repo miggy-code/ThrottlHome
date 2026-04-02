@@ -34,6 +34,7 @@ export function Navigation() {
             <Link
               key={link.href}
               href={link.href}
+              prefetch={false}
               className={cn(
                 "relative font-sans text-[15px] font-medium text-ink transition-colors duration-200 hover:text-blueprint",
                 "after:absolute after:bottom-[-4px] after:left-1/2 after:h-[2px] after:w-0 after:bg-blueprint after:transition-all after:duration-200 after:-translate-x-1/2 hover:after:w-full",
@@ -71,6 +72,7 @@ export function Navigation() {
             <Link
               key={link.href}
               href={link.href}
+              prefetch={false}
               onClick={() => setMobileOpen(false)}
               className={cn(
                 "font-sans text-2xl font-medium text-ink transition-colors hover:text-blueprint",

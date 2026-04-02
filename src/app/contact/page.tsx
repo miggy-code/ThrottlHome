@@ -3,6 +3,9 @@ import { Container } from "@/components/ui/Container";
 import { BlueprintGrid } from "@/components/global/BlueprintGrid";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { COMPANY } from "@/lib/constants";
+import dynamic from "next/dynamic";
+
+const GlobalCTA = dynamic(() => import("@/components/global/GlobalCTA").then((m) => m.GlobalCTA));
 
 export const metadata: Metadata = {
   title: "Contact — Throttl",

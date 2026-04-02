@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { playfairDisplay, dmSans, jetbrainsMono } from "@/lib/fonts";
 import { Navigation } from "@/components/global/Navigation";
-import { Footer } from "@/components/global/Footer";
+import dynamic from "next/dynamic";
 import "./globals.css";
+
+const Footer = dynamic(() => import("@/components/global/Footer").then(m => m.Footer));
 
 export const metadata: Metadata = {
   title: "Throttl — AI Advisory for Operators",
