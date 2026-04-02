@@ -88,8 +88,10 @@ export function ProblemSection() {
   const [hasStarted, setHasStarted] = useState(false);
 
   useEffect(() => {
-    if (isIntersecting && !hasStarted) setHasStarted(true);
-  }, [isIntersecting, hasStarted]);
+    if (isIntersecting) {
+      requestAnimationFrame(() => setHasStarted(true));
+    }
+  }, [isIntersecting]);
 
   return (
     <section className="bg-wash py-12 md:py-[120px]">
@@ -112,7 +114,8 @@ export function ProblemSection() {
                 <p>
                   You&apos;re hearing about AI from every vendor, conference,
                   and board member. But the gap between vendor promises and
-                  actual operational reality is massive.
+                  actual operational reality is massive. Training doesn&apos;t fight adoption. It channels the adoption that&apos;s already 
+                  happening.
                 </p>
                 <p>
                   The bottleneck isn&apos;t a lack of tools&mdash;it&apos;s a lack of

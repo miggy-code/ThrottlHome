@@ -115,8 +115,10 @@ export function AdoptionGapStats() {
   const [hasStarted, setHasStarted] = useState(false);
 
   useEffect(() => {
-    if (isIntersecting && !hasStarted) setHasStarted(true);
-  }, [isIntersecting, hasStarted]);
+    if (isIntersecting) {
+      requestAnimationFrame(() => setHasStarted(true));
+    }
+  }, [isIntersecting]);
 
   return (
     <div ref={ref}>
