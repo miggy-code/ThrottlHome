@@ -19,11 +19,12 @@ export function Navigation() {
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image
-            src="/logo.png"
+            src="/media/with_padding.png"
             alt="Throttl"
-            width={120}
-            height={36}
-            className="h-9 w-auto"
+            width={240}
+            height={72}
+            className="h-12 md:h-16 w-auto object-contain"
+            priority
           />
         </Link>
 
