@@ -8,8 +8,7 @@ const ServicesSection = dynamic(() => import("@/components/home/ServicesSection"
 const ProcessSection = dynamic(() => import("@/components/home/ProcessSection").then((m) => m.ProcessSection));
 const ReadinessAssessment = dynamic(() => import("@/components/home/ReadinessAssessment").then((m) => m.ReadinessAssessment));
 const ProofSection = dynamic(() => import("@/components/home/ProofSection").then((m) => m.ProofSection));
-const FinalCTASection = dynamic(() => import("@/components/home/FinalCTASection").then((m) => m.FinalCTASection));
-const CTASection = dynamic(() => import("@/components/home/CTASection").then((m) => m.CTASection));
+const GlobalCTA = dynamic(() => import("@/components/global/GlobalCTA").then((m) => m.GlobalCTA));
 
 export default function Home() {
   return (
@@ -22,8 +21,7 @@ export default function Home() {
       <ProcessSection />
       <ReadinessAssessment />
       <ProofSection />
-      <CTASection />
-      <FinalCTASection />
+      <GlobalCTA />
     </>
   );
 }
