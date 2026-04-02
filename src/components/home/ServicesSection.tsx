@@ -54,28 +54,28 @@ export function ServicesSection() {
           {services.map((service, i) => {
             const Icon = service.icon;
             return (
-              <FadeIn key={service.title} delay={300 + i * 100}>
+              <FadeIn key={service.title} delay={300 + i * 100} className="flex h-full">
                 <div
-                  className={`group rounded-lg border border-gridline border-t-[3px] ${service.accent} bg-canvas p-12 transition-all duration-200 hover:shadow-[0_8px_32px_rgba(27,42,74,0.08)] hover:-translate-y-0.5`}
+                  className={`group flex h-full w-full flex-col rounded-lg border border-gridline border-t-[3px] ${service.accent} bg-canvas p-10 transition-all duration-200 hover:shadow-[0_8px_32px_rgba(27,42,74,0.08)] hover:-translate-y-0.5 md:p-12`}
                 >
                   <div
-                    className={`inline-flex h-12 w-12 items-center justify-center rounded-lg ${service.iconBg}`}
+                    className={`inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-lg ${service.iconBg}`}
                   >
                     <Icon
                       className={`h-6 w-6 ${service.iconColor}`}
                       strokeWidth={1.6}
                     />
                   </div>
-                  <h3 className="mt-5 font-sans text-[22px] font-semibold text-ink">
+                  <h3 className="mt-5 shrink-0 font-sans text-[22px] font-semibold text-ink">
                     {service.title}
                   </h3>
-                  <p className="mt-1 font-sans text-base italic text-charcoal">
+                  <p className="mt-1 shrink-0 font-sans text-base italic text-charcoal">
                     {service.subtitle}
                   </p>
-                  <p className="mt-4 text-charcoal">{service.description}</p>
+                  <p className="mt-4 grow text-charcoal">{service.description}</p>
                   <Link
                     href={service.cta.href}
-                    className="group/link mt-6 inline-flex items-center gap-1 font-sans text-base font-medium text-blueprint transition-colors hover:text-blueprint-hover"
+                    className="group/link mt-6 mr-auto inline-flex shrink-0 items-center gap-1 font-sans text-base font-medium text-blueprint transition-colors hover:text-blueprint-hover"
                   >
                     {service.cta.label}{" "}
                     <span className="inline-block transition-transform duration-200 group-hover/link:translate-x-1">

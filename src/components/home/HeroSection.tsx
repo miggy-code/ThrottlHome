@@ -143,21 +143,6 @@ export function HeroSection() {
   // ── Init: filter by breakpoint, trigger via IntersectionObserver ────────────
 
   useEffect(() => {
-    // Safety check: if already played, skip to resolved
-    try {
-      const hasPlayed = sessionStorage.getItem("hero-played");
-      if (hasPlayed === "true" && process.env.NODE_ENV !== "development") {
-        requestAnimationFrame(() => setPhase("resolved"));
-        // Still need to set items for the static layout
-        const w = window.innerWidth;
-        const bp = w >= 1024 ? 2 : w >= 768 ? 1 : 0;
-        requestAnimationFrame(() => setItems(CHAOS.filter((el) => el.bp <= bp)));
-        return;
-      }
-    } catch {
-      // Storage might be blocked
-    }
-
     const w = window.innerWidth;
     const bp = w >= 1024 ? 2 : w >= 768 ? 1 : 0;
     const filteredItems = CHAOS.filter((el) => el.bp <= bp);
@@ -371,9 +356,6 @@ export function HeroSection() {
 
     const t = setTimeout(() => {
       setPhase("resolved");
-      if (process.env.NODE_ENV !== "development") {
-        sessionStorage.setItem("hero-played", "true");
-      }
     }, T.RESOLVED);
     anims.push({ cancel: () => clearTimeout(t) } as unknown as Animation);
   }, [items]);
