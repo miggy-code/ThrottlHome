@@ -173,6 +173,12 @@
   }
 }
 
+/* Download button glow pulse */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(133,0,255,0.15); }
+  50% { box-shadow: 0 0 30px rgba(133,0,255,0.25); }
+}
+
 /* Hero gradient mesh animations */
 @keyframes meshFloat1 {
   0%, 100% { transform: translate(0, 0); }

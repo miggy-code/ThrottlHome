@@ -94,7 +94,7 @@ export function ProblemSection() {
   }, [isIntersecting]);
 
   return (
-    <section className="bg-wash py-12 md:py-[120px]">
+    <section className="bg-wash py-16 md:py-[120px]">
       <Container>
         <div className="grid grid-cols-1 gap-8 md:gap-16 md:grid-cols-[1fr_0.67fr]">
           {/* Left column — copy */}

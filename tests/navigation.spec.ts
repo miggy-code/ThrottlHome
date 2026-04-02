@@ -11,7 +11,7 @@ test.describe("Functional Navigation Rules", () => {
     await expect(page).toHaveURL(/.*\/services/);
     
     // Headings verification
-    await expect(page.getByRole("heading", { name: /You already bought the tools/i })).toBeVisible();
+    await expect(page.getByRole("heading", { name: /We make AI actually work/i })).toBeVisible();
   });
 
   test("Mobile hamburger menu opens and closes", async ({ page, isMobile }) => {

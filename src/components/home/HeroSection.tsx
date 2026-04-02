@@ -126,6 +126,7 @@ export function HeroSection() {
 
   const [phase, setPhase] = useState<"loading" | "chaos" | "animating" | "resolved">("loading");
   const [items, setItems] = useState<ChaosItem[]>([]);
+  const reducedMotion = useRef(false);
 
   // ── Flush stale Web Animations on re-mount (HMR / Strict Mode) ─────────────
 
@@ -148,9 +149,10 @@ export function HeroSection() {
     const filteredItems = CHAOS.filter((el) => el.bp <= bp);
     requestAnimationFrame(() => setItems(filteredItems));
 
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) {
-      requestAnimationFrame(() => setPhase("resolved"));
+    reducedMotion.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion.current) {
+      // Skip chaos, go straight to a gentle content reveal
+      requestAnimationFrame(() => setPhase("animating"));
       return;
     }
 
@@ -170,6 +172,37 @@ export function HeroSection() {
 
   const runAnimation = useCallback((anims: Animation[]) => {
     const push = (a: Animation | undefined) => { if (a) anims.push(a); };
+
+    // ── Reduced-motion path: gentle sequential fade-in, no transforms ───────
+    if (reducedMotion.current) {
+      // Fade in headline words
+      HEADLINE_WORDS.forEach((_, idx) => {
+        const wordEl = wordMap.current.get(idx);
+        if (!wordEl) return;
+        push(wordEl.animate(
+          [{ opacity: 0 }, { opacity: 1 }],
+          { duration: 300, delay: idx * 150, easing: "ease-out", fill: "forwards" },
+        ));
+      });
+      // Period
+      push(periodRef.current?.animate(
+        [{ opacity: 0, color: "white" }, { opacity: 1, color: ACCENT }],
+        { duration: 300, delay: 450, easing: "ease-out", fill: "forwards" },
+      ));
+      // Subheadline
+      push(subRef.current?.animate(
+        [{ opacity: 0 }, { opacity: 1 }],
+        { duration: 400, delay: 600, easing: "ease-out", fill: "forwards" },
+      ));
+      // CTA
+      push(ctaRef.current?.animate(
+        [{ opacity: 0 }, { opacity: 1 }],
+        { duration: 400, delay: 800, easing: "ease-out", fill: "forwards" },
+      ));
+      const t = setTimeout(() => setPhase("resolved"), 1300);
+      anims.push({ cancel: () => clearTimeout(t) } as unknown as Animation);
+      return;
+    }
 
     // ── Wave 1: outer ring departs outward (staggered left→right, top→bottom) ─
     const outerItems = items.filter(
@@ -384,7 +417,7 @@ export function HeroSection() {
   // ── Helpers ─────────────────────────────────────────────────────────────────
 
   const resolved = phase === "resolved";
-  const showChaos = phase !== "loading";
+  const showChaos = phase !== "loading" && !reducedMotion.current;
 
   const chaosRef = (id: number) => (el: HTMLElement | null) => {
     if (el) chaosMap.current.set(id, el);
