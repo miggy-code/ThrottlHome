@@ -522,19 +522,33 @@ export function HeroSection() {
       {/* ── Content ── */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
 
-        <h1 className="font-display font-bold leading-[1.1] text-white text-4xl sm:text-[40px] md:text-[52px] lg:text-[72px] hyphens-auto break-words">
-          {HEADLINE_WORDS.map((word, i) => (
-            <span key={i}>
-              {i > 0 && HEADLINE_WORDS[i - 1].line === word.line && " "}
-              {i > 0 && HEADLINE_WORDS[i - 1].line !== word.line && <br />}
-              <span
-                ref={wordRef(i)}
+        <h1 className="font-display flex flex-col font-bold leading-[1.1] text-white text-4xl sm:text-[40px] md:text-[52px] lg:text-[72px] hyphens-auto break-words">
+          <div className="flex flex-wrap items-center justify-center gap-[0.25em]">
+          {HEADLINE_WORDS.map((word, absoluteIndex) => (
+            word.line === 0 ? (
+              <span 
+                key={word.text} 
+                ref={wordRef(absoluteIndex)}
                 className="inline-block"
                 style={{ opacity: resolved ? 1 : 0 }}
               >
                 {word.text}
               </span>
-            </span>
+            ) : null
+          ))}
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-[0.25em]">
+          {HEADLINE_WORDS.map((word, absoluteIndex) => (
+            word.line === 1 ? (
+              <span 
+                key={word.text} 
+                ref={wordRef(absoluteIndex)}
+                className="inline-block"
+                style={{ opacity: resolved ? 1 : 0 }}
+              >
+                {word.text}
+              </span>
+            ) : null
           ))}
           <span
             ref={periodRef}
@@ -546,6 +560,7 @@ export function HeroSection() {
           >
             .
           </span>
+          </div>
         </h1>
 
         <p
