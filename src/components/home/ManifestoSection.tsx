@@ -6,7 +6,7 @@ import { cn } from "@/lib/cn";
 
 const principles = [
   "We don't sell vaporware.",
-  "We don't run 18-month engagements with no deliverables.",
+  "We don't run 18-month engagements that go nowhere.",
   "We don't recommend technology for its own sake.",
   "We don't hide behind jargon to justify our fees.",
   "We don't pretend every problem needs AI.",

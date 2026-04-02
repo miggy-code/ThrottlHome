@@ -42,7 +42,7 @@ export function ServicesHero() {
           <div>
             <FadeIn>
               <span className="font-sans text-[14px] font-medium uppercase tracking-[0.08em] text-white/30">
-                Education & Solutions
+                Executive Education & Custom Solutions
               </span>
             </FadeIn>
 

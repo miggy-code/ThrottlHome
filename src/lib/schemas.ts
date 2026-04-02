@@ -12,8 +12,8 @@ export const contactSchema = z.object({
 export type ContactFormData = z.infer<typeof contactSchema>;
 
 export const topicOptions = [
-  "AI Strategy & Implementation",
-  "Executive Education & Training",
-  "Not sure yet, I'd like to explore",
+  "Executive AI Education",
+  "Custom AI Solutions",
+  "Not sure yet — I'd like to explore",
   "Other",
 ] as const;

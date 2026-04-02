@@ -9,7 +9,7 @@ const Footer = dynamic(() => import("@/components/global/Footer").then(m => m.Fo
 export const metadata: Metadata = {
   title: "Throttl | AI Advisory for Operators",
   description:
-    "We help business leaders cut through AI complexity and build systems that deliver measurable, consistent value.",
+    "We give leadership teams the fluency, frameworks, and confidence to drive AI adoption from the inside out.",
 };
 
 export default function RootLayout({

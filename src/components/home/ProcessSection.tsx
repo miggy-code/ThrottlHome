@@ -26,7 +26,7 @@ const steps = [
     number: "3",
     title: "The Internal Playbook",
     description:
-      "Your team doesn't just leave with theory. We exit the workshop with a concrete, de-risked AI policy and an execution roadmap that your own management can immediately deploy and oversee.",
+      "Your team doesn't just leave with theory. You exit the workshop with a concrete, de-risked AI policy and an execution roadmap that your own managers can immediately deploy and oversee.",
     duration: "The Handoff",
   },
 ];
@@ -37,7 +37,7 @@ export function ProcessSection() {
   });
 
   return (
-    <section id="process" className="relative bg-canvas py-12 md:py-[120px]">
+    <section id="process" className="relative bg-canvas py-16 md:py-[120px]">
       <BlueprintGrid opacity={0.15} />
 
       <Container className="relative z-10">
@@ -49,7 +49,7 @@ export function ProcessSection() {
         >
           <SectionLabel>THE PROCESS</SectionLabel>
           <h2 className="mt-6 font-display text-ink">
-            From conversation to capability.
+            Three steps to internal AI fluency.
           </h2>
         </div>
 

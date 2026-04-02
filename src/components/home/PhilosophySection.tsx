@@ -23,10 +23,10 @@ export function PhilosophySection() {
             <div className="mt-8 space-y-4 text-charcoal">
               <FadeIn delay={200}>
                 <p>
-                  Throttl approaches every engagement through what we call
-                  the Operator&apos;s Lens: the discipline of starting with your
-                  business reality, not our technology stack, and working backward to find
-                  where AI genuinely moves the needle.
+                  Every engagement starts with your business reality, not a
+                  technology stack. We work backward from your operations to
+                  find where AI genuinely moves the needle&mdash;and where it
+                  doesn&apos;t.
                 </p>
               </FadeIn>
 

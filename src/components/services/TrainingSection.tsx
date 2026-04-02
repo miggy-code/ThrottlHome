@@ -8,11 +8,11 @@ export function TrainingSection() {
     <section className="bg-canvas py-16 md:py-[120px]">
       <Container>
         <FadeIn>
-          <SectionLabel>AI Education &amp; Training</SectionLabel>
+          <SectionLabel>Executive AI Education</SectionLabel>
         </FadeIn>
         <FadeIn delay={100}>
           <h2 className="mt-6 font-display text-ink">
-            Your tools. Your workflows. Hands on keys.
+            Training built around what your team actually does.
           </h2>
         </FadeIn>
         <FadeIn delay={200}>

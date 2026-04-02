@@ -9,13 +9,13 @@ export function CTASection() {
         <div className="mx-auto max-w-3xl text-center">
           <FadeIn>
             <h2 className="font-display text-3xl font-bold text-white md:text-5xl">
-              Ready to take ownership of your AI strategy?
+              Ready to make your team AI-fluent?
             </h2>
           </FadeIn>
           
           <FadeIn delay={100}>
             <p className="mt-6 font-sans text-lg text-white/70">
-              The first step isn&apos;t a sales pitch. It&apos;s an Alignment Call with Gabriel to discuss your current operational bottlenecks, assess your team&apos;s baseline, and see if an Executive Intensive is the right move for your business.
+              The first step isn&apos;t a sales pitch. It&apos;s a Strategy Review with Gabriel to understand your operational bottlenecks, assess your team&apos;s baseline, and see if executive education is the right move for your business.
             </p>
           </FadeIn>
 
@@ -25,12 +25,12 @@ export function CTASection() {
                 href="/contact"
                 className="inline-flex h-14 items-center justify-center gap-2 rounded bg-[#8500FF] px-8 font-sans text-[15px] font-semibold uppercase tracking-wider text-white transition-all hover:scale-[1.02] hover:bg-[#9d33ff] hover:shadow-[0_0_24px_rgba(133,0,255,0.4)]"
               >
-                Book an Alignment Call
+                Book a Strategy Review
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
             <p className="mt-6 font-sans text-sm text-white/40">
-              Zero obligation. Just a candid conversation between operators.
+              60 minutes. No pitch. Just clarity.
             </p>
           </FadeIn>
         </div>

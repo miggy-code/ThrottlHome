@@ -10,7 +10,7 @@ const GlobalCTA = dynamic(() => import("@/components/global/GlobalCTA").then((m)
 export const metadata: Metadata = {
   title: "Contact | Throttl",
   description:
-    "Book a complimentary AI strategy review. 60 minutes with Gabriel. No pitch, just clarity.",
+    "Book a complimentary Strategy Review. 60 minutes with Gabriel. No pitch, just clarity.",
 };
 
 export default function ContactPage() {
@@ -28,7 +28,7 @@ export default function ContactPage() {
 
             <div className="mt-6 space-y-4 text-charcoal">
               <p>
-                Every engagement begins with an AI Strategy Review: a
+                Every engagement begins with a Strategy Review: a
                 60-minute conversation with Gabriel to understand your business,
                 assess your AI landscape, and identify where real value can be
                 created.

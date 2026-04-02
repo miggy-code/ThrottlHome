@@ -27,7 +27,7 @@ const T = {
 const HEADLINE_WORDS = [
   { text: "AI Clarity.", line: 0 },
   { text: "Executive", line: 1 },
-  { text: "Confidence.", line: 1 },
+  { text: "Confidence", line: 1 },
 ];
 
 const DOT_OFFSETS: [number, number][] = [
@@ -556,9 +556,9 @@ export function HeroSection() {
           className="mt-6 max-w-[600px] font-sans text-lg md:text-xl"
           style={{ opacity: resolved ? 1 : 0, color: "#B0B8C8" }}
         >
-          Stop outsourcing your AI strategy to software vendors. We give your
-          leadership team the fluency, frameworks, and confidence to drive AI
-          adoption from the inside out.
+          Your leadership team shouldn&apos;t depend on vendors to understand
+          AI. We run intensive, hands-on executive programs that give your
+          managers the fluency to drive AI adoption themselves.
         </p>
 
         <div
@@ -575,8 +575,8 @@ export function HeroSection() {
               boxShadow: "0 0 20px rgba(133,0,255,0.3)",
             }}
           >
-            <span className="hidden sm:inline">Book an Alignment Call</span>
-            <span className="sm:hidden">Book an Alignment Call</span>
+            <span className="hidden sm:inline">Book a Strategy Review</span>
+            <span className="sm:hidden">Book a Strategy Review</span>
           </a>
           <a
             href="#process"

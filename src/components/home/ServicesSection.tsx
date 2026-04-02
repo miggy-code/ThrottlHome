@@ -6,22 +6,22 @@ import Link from "next/link";
 
 const services = [
   {
-    title: "Executive AI Workshops & Training",
+    title: "Executive AI Education",
     subtitle: "Flagship",
     description:
-      "Highly tailored, multi-day intensives for $5M+ businesses. We bridge the gap between AI hype and operational reality, giving your managers the fluency and frameworks to safely implement AI without relying on outside tech teams.",
-    cta: { label: "Explore education", href: "/services" },
+      "Highly tailored, multi-day intensives that bridge the gap between AI hype and operational reality. We give your managers the fluency and frameworks to safely implement AI without relying on outside tech teams.",
+    cta: { label: "Explore education programs", href: "/services" },
     icon: GraduationCap,
     accent: "border-t-[#8500FF]",
     iconBg: "bg-[#8500FF]/10",
     iconColor: "text-[#8500FF]",
   },
   {
-    title: "Custom AI Implementation",
+    title: "Custom AI Solutions",
     subtitle: "Specialized",
     description:
       "Sometimes the roadmap your team designs during the workshop requires advanced engineering. For select clients, we act as a fractional development team, building the bespoke LLM and automation workflows you need, while your managers oversee the strategy.",
-    cta: { label: "Explore consulting", href: "/services" },
+    cta: { label: "Explore solutions", href: "/services" },
     icon: Cpu,
     accent: "border-t-blueprint",
     iconBg: "bg-blueprint/10",
@@ -39,14 +39,14 @@ export function ServicesSection() {
 
         <FadeIn delay={100}>
           <h2 className="mt-6 font-display text-ink">
-            Two capabilities. One mission.
+            Education first. Engineering when you need it.
           </h2>
         </FadeIn>
 
         <FadeIn delay={200}>
           <p className="mt-4 text-charcoal">
-            Whether you need hands-on implementation or strategic training,
-            every engagement starts with understanding your business.
+            Every engagement starts with your business. Most start&mdash;and
+            end&mdash;with education.
           </p>
         </FadeIn>
 

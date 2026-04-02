@@ -200,7 +200,7 @@ export function ReadinessAssessment() {
   const answeredSteps = answers.map((_, i) => i);
 
   return (
-    <section className="bg-canvas py-16 md:py-[120px]">
+    <section className="bg-wash py-16 md:py-[120px]">
       <Container>
         <div
           ref={ref}

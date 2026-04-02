@@ -115,9 +115,9 @@ export function ProblemSection() {
                   actual operational reality is massive.
                 </p>
                 <p>
-                  The bottleneck isn&apos;t a lack of tools, it&apos;s a lack of
+                  The bottleneck isn&apos;t a lack of tools&mdash;it&apos;s a lack of
                   internal fluency. You don&apos;t need another software
-                  subscription; you need your leadership team equipped to
+                  subscription. You need your leadership team equipped to
                   separate the hype from the actual ROI.
                 </p>
               </div>

@@ -25,7 +25,7 @@ export default function BlogPage() {
               Insights
             </span>
             <h1 className="mt-4 font-display text-[40px] font-bold leading-tight text-ink md:text-[56px]">
-              Ideas that move<br className="hidden md:block" /> the needle.
+              From the field.
             </h1>
             <p className="mt-5 max-w-[600px] font-sans text-lg text-charcoal/75">
               Practical thinking on AI strategy, engineering, and operations.

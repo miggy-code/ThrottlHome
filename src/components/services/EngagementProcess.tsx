@@ -15,7 +15,7 @@ const steps = [
     number: "01",
     title: "Audit (The Reality Check)",
     description:
-      "We don't do off-the-shelf curriculums. We analyze your current tools, your team's actual baseline, and your operational bottlenecks before we design your syllabus.",
+      "Nothing is off-the-shelf. We analyze your current tools, your team's actual baseline, and your operational bottlenecks before we design a single slide.",
   },
   {
     icon: SlidersHorizontal,

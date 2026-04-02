@@ -13,7 +13,7 @@ const FAQSection = dynamic(() => import("@/components/services/FAQSection").then
 export const metadata: Metadata = {
   title: "Services | Throttl",
   description:
-    "AI Education & Training and Custom AI Solutions, built around your business reality, your tools, and your team.",
+    "Executive AI Education and Custom AI Solutions, built around your business reality, your tools, and your team.",
 };
 
 export default function ServicesPage() {

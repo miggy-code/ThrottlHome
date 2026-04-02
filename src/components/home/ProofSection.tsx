@@ -105,7 +105,7 @@ export function ProofSection() {
                 Co-Founder &amp; Lead Advisor
               </p>
               <p className="mt-4 max-w-[540px] text-charcoal">
-                With decades of operational and sales experience in traditional
+                With deep operational and sales experience across traditional
                 industries, Gabriel bridges the gap between what AI can do and
                 what businesses actually need. His approach is rooted in
                 real-world operations, not technology hype.

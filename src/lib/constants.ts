@@ -1,6 +1,6 @@
 export const COMPANY = {
   name: "Throttl",
-  tagline: "AI advisory for operators.",
+  tagline: "AI advisory for operators",
   email: "hello@throttl.ai",
   founded: "2024",
   location: "NYC",
