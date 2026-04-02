@@ -60,9 +60,9 @@ export function PhilosophySection() {
               {/* Main image */}
               <div className="relative overflow-hidden rounded-xl shadow-[0_20px_60px_rgba(27,42,74,0.12)]">
                 <Image
-                  src="/meeting.jpg"
+                  src="/business-meeting-over-coffee.jpg"
                   alt="Strategic planning session: mapping business outcomes before choosing technology"
-                  width={600}
+                  width={640}
                   height={440}
                   className="h-auto w-full object-cover"
                 />

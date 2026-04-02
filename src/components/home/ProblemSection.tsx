@@ -65,17 +65,17 @@ function AnimatedStat({
 
 const stats: { target: number; prefix?: string; suffix?: string; label: string }[] = [
   {
-    target: 77,
+    target: 82,
     suffix: "%",
     label: "of executives say their biggest AI hurdle is a lack of internal skills.",
   },
   {
-    target: 78,
+    target: 58,
     suffix: "%",
     label: "of employees are bringing unapproved AI tools into the workplace.",
   },
   {
-    target: 70,
+    target: 74,
     suffix: "%",
     label: "of software implementations fail due to poor team adoption.",
   },
