@@ -114,8 +114,7 @@ export function ProblemSection() {
                 <p>
                   You&apos;re hearing about AI from every vendor, conference,
                   and board member. But the gap between vendor promises and
-                  actual operational reality is massive. Training doesn&apos;t fight adoption. It channels the adoption that&apos;s already 
-                  happening.
+                  actual operational reality is massive.
                 </p>
                 <p>
                   The bottleneck isn&apos;t a lack of tools&mdash;it&apos;s a lack of
