@@ -36,7 +36,7 @@ type Phase = {
 const PHASES: Phase[] = [
   {
     id: 1,
-    title: "Individual Augmentation",
+    title: "Personal Productivity",
     subtitle: 'The "Chatbot" Era',
     icon: MessageSquare,
     color: "text-[#6B7280]",
@@ -44,9 +44,9 @@ const PHASES: Phase[] = [
     colorBorder: "border-[#6B7280]/30",
     colorGlow: "shadow-[0_0_20px_rgba(107,114,128,0.15)]",
     description:
-      "Employees use BYOAI or a corporate chatbot. It's a one-pass system: ask a question, get a text answer. No internal data connection.",
+      "Employees use public or basic corporate AI chat tools. It's a one-pass system: ask a question, get a text answer. No connection to your company's actual data.",
     infrastructure:
-      "Standard API keys or browser-based logins. No internal data connection.",
+      "Standard web-based logins or basic API access. No internal data integration.",
     brain: 'Non-existent. Knowledge is trapped in PDFs on a hard drive or in the head of "the tech guy."',
     benefits:
       "Micro-productivity. 10–15% time savings on writing emails, summarizing articles, or basic code debugging.",
@@ -54,25 +54,25 @@ const PHASES: Phase[] = [
   },
   {
     id: 2,
-    title: "Knowledge Grounding",
-    subtitle: "The RAG Era",
+    title: "Connected Knowledge",
+    subtitle: 'The "Librarian" Era',
     icon: BookOpen,
     color: "text-blueprint",
     colorBg: "bg-blueprint/10",
     colorBorder: "border-blueprint/30",
     colorGlow: "shadow-[0_0_20px_rgba(59,125,216,0.15)]",
     description:
-      'You build a Knowledge Repository so the AI can "read" your company\'s docs. It stops hallucinating because it has a factual source of truth.',
+      "You connect AI to your internal documents so it can \"read\" your company's data. It provides reliable answers based strictly on your secure, factual source of truth.",
     infrastructure:
-      "A Vector Database (Pinecone, Weaviate, or pgvector) and an ingestion pipeline.",
-    brain: 'The "Librarian." It finds the exact page of a contract or technical manual in seconds.',
+      "A secure search database and automated pipelines that map and organize your company's files.",
+    brain: "A digital librarian. It finds the exact page of a contract or technical manual in seconds.",
     benefits:
-      "Information symmetry. Everyone has the same knowledge about company history and specs. Onboarding time drops by 50%.",
+      "Information symmetry. Everyone has the same latest knowledge about company history and specs. Onboarding time drops by 50%.",
     metric: "50%",
   },
   {
     id: 3,
-    title: "Agentic Workflows",
+    title: "Automated Workflows",
     subtitle: 'The "Specialist" Era',
     icon: Bot,
     color: "text-[#8500FF]",
@@ -80,35 +80,35 @@ const PHASES: Phase[] = [
     colorBorder: "border-[#8500FF]/30",
     colorGlow: "shadow-[0_0_20px_rgba(133,0,255,0.15)]",
     description:
-      'AI stops just "talking" and starts "doing." You move from a chatbot to an Agent that reads emails, checks status, and updates your systems.',
+      "AI stops just \"talking\" and starts \"doing.\" You move from a chatbot to a digital assistant that can read emails, check system statuses, and update your software.",
     infrastructure:
-      "Multi-agent loops (Perceive → Reason → Plan → Act → Observe). Tool-calling capabilities connected to Slack, GitHub, or CRM.",
-    brain: "No longer just a library, it's a Playbook. It stores how-to guides that agents follow to execute tasks.",
+      "Dynamic AI workflows connected directly to your existing systems (like Slack, your CRM, or project management tools).",
+    brain: "No longer just a library, it's a Playbook. It stores business rules and how-to guides that AI assistants follow to execute multi-step tasks.",
     benefits:
       "Operational efficiency. You eliminate middle-man tasks like data entry, scheduling, and basic project management.",
     metric: "10x",
   },
   {
     id: 4,
-    title: "Human-in-the-Loop",
-    subtitle: 'The "Collaborator" Era',
+    title: "Human-AI Collaboration",
+    subtitle: 'The "Partner" Era',
     icon: Users,
     color: "text-success",
     colorBg: "bg-success/10",
     colorBorder: "border-success/30",
     colorGlow: "shadow-[0_0_20px_rgba(46,139,87,0.15)]",
     description:
-      "AI agents handle 90% of the work but pause to ask a human for a strategic steer or quality check. An asynchronous partnership.",
+      "AI assistants handle 90% of the routine work but automatically pause to ask a human for a strategic steer or quality check. An asynchronous partnership.",
     infrastructure:
-      'HITL triggers. If an agent has low confidence (< 85%) on a decision, it flags a human: "I\'ve drafted this, but I\'m unsure about pricing. Please approve or edit."',
-    brain: "Begins recording Human Feedback. Your corrections are saved back into the knowledge base so the Brain learns your preferences.",
+      "Automated pause points. If the AI has low confidence (< 85%) on a decision, it flags a human: \"I've drafted this, but I'm unsure about pricing. Please approve or edit.\"",
+    brain: "Begins recording Human Feedback. Your corrections are saved back into the knowledge base so the Brain learns your preferences over time.",
     benefits:
       "Scalable creativity. Humans focus on strategy and vision while AI handles execution. Handle 10x client load without 10x staff.",
     metric: "10x",
   },
   {
     id: 5,
-    title: "The Autonomous Enterprise",
+    title: "The AI-Driven Enterprise",
     subtitle: 'The "Living Brain"',
     icon: Brain,
     color: "text-[#D97706]",
@@ -116,10 +116,10 @@ const PHASES: Phase[] = [
     colorBorder: "border-[#D97706]/30",
     colorGlow: "shadow-[0_0_20px_rgba(217,119,6,0.15)]",
     description:
-      "The AI Brain is the primary implementer. It monitors the external environment and internal data, proposing improvements before humans see the problem.",
+      "The AI system proactively monitors the external environment and internal data, proposing operational improvements before humans even see the problem.",
     infrastructure:
-      'Recursive Feedback Loops. The system uses "Episodic Memory" to remember every past mistake and success across the entire firm.',
-    brain: "A Collective Consciousness. It captures the silent knowledge of every meeting and decision. It models individual decision-making history.",
+      "Recursive feedback loops. The system remembers every past mistake and success across the entire firm, adjusting its approach automatically.",
+    brain: "A collective consciousness. It captures the silent knowledge of every meeting and decision, securely modeling how your best people solve problems.",
     benefits:
       "Compounding intelligence. The company's value is its proprietary Digital Asset: a brain that gets smarter every day.",
     metric: "∞",
@@ -316,8 +316,6 @@ function DetailPanel({ phase, isVisible }: { phase: Phase; isVisible: boolean })
 export function AdoptionChart() {
   const [activePhase, setActivePhase] = useState(1);
   const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.1 });
-
-  const active = PHASES.find((p) => p.id === activePhase)!;
 
   return (
     <div ref={ref} className="mt-24">
